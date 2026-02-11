@@ -1,0 +1,579 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-weight: normal;
+    font-style: normal;
+    color: var(--text-color);
+    box-sizing: border-box;
+    /* border: 3px solid red; */
+    overscroll-behavior: none;                  /*OH GODS YES*/
+}
+
+:root {
+    --main-color: #bf2025;
+    --secondary-color: #ffda65;
+    --tertiary-color: #5e090e;
+    --white-color: #fafffa;
+    --black-color: #000;
+    --text-color: #050706;
+    --heading-font: "Cormorant Unicase", serif;
+    --main-font: 'EB Garamond', serif;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    overflow-y: visible;
+    background-image: linear-gradient(to bottom, var(--white-color) 10%, var(--tertiary-color) 75%, var(--black-color) 100%);
+    background-attachment: fixed;
+}
+
+@media not (prefers-reduced-motion: reduce) {
+    @view-transition {
+        navigation: auto;
+    }
+}
+
+
+
+
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: "Cormorant Unicase", serif;
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+}
+
+a{
+    font-size: 12px;
+    font-family: "Cormorant Unicase", serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--white-color);
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+    font-weight: normal;
+}
+
+i {
+    font-weight: lighter;
+    font-style: italic;
+    padding: 0px 12px;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+small {
+    font-size: 80%;
+    font-weight: normal
+    }
+
+.flex {
+    display: flex;
+}
+
+img {
+    width: inherit;
+}
+
+.caption {
+    text-align: right;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: end;
+    padding: 8px;
+}
+
+.navbar a {
+    margin-right: 2em; /* Adjust the space between links */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--white-color);
+}
+
+.logo {
+    margin-left: 24px;
+    align-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* reading */
+/* --------------------------------------------------------------------------------------- */
+
+
+.chapter {
+    page-break-before: always;
+    margin-top: 4em;
+}
+
+.uppercase-with-big-first-letter {
+    /* Converts the entire text inside the element to uppercase */
+    text-transform: uppercase;
+    /* Optional: Sets the font size for the rest of the text */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.uppercase-with-big-first-letter::first-letter {
+    /* Increases the font size of just the first letter */
+    font-size: 32px; /* Adjust this value to control how much bigger the letter is */
+    /* Optional: Adjust vertical alignment for better positioning */
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+button {
+    /* display: inline-block; */
+    padding: 10px 20px;
+    /* background-color: red; */
+    border: 2px solid black;
+    border-radius: 12px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: orange;
+    color: var(--main-color);
+}
+
+.wrapper{
+    display: flex;
+    max-width: 1920px;
+    min-height: 80vh;
+    margin: auto;
+    padding: 24px;
+}
+
+
+
+
+
+aside {
+    position: fixed;
+    width: 20vw;
+    /* max-height: 40vh; */
+    overflow-y: scroll;
+    border: inset .5em var(--main-color);
+    background-image: linear-gradient(to bottom, var(--secondary-color) 1%, var(--main-color), var(--black-color));
+    scrollbar-color: var(--white-color);
+}
+
+aside h4 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: center;
+}
+
+aside em {
+    font-size: 12px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+aside ul {
+    text-align: center;
+}
+
+aside p {
+    text-align: center;
+}
+
+aside em {
+    color: var(--main-color);
+}
+
+aside .scroll-indicator {
+    text-align: right;
+    border-left: 3px solid var(--white-color);
+}
+
+.table-content {
+    max-height: 40vh;
+    border-left: 3px solid var(--white-color);
+    overflow-y: scroll;
+}
+
+.table-content p {
+    font-family: var(--heading-font);
+    color: var(--white-color);
+}
+
+.reading {
+    margin-left: 20vw;
+    width: 80vw;
+}
+
+.reading p {
+    text-indent: 2rem;
+    line-height: 1.25;
+}
+
+.reading p + p {
+      margin-top: 10px;
+}
+
+.preamble div, .preamble p {
+    margin-bottom: 1rem;
+}
+
+.preamble .copyright {
+    text-align: center;
+}
+
+.preamble .right {
+    width: 35%;
+}
+
+.preamble .left {
+    width: 65%;
+}
+
+.preamble p {
+    text-indent: 0;
+}
+
+.c {
+    text-align: center;
+}
+
+.letra {
+    margin: 2% auto 1% auto;
+    margin-top: 1em;
+    text-align: center;
+    text-indent: 0%;
+}
+
+div .book-cover-proj {
+    margin-bottom: 10vh;
+    border: .5em inset var(--main-color);
+    background-color: var(--black-color);
+}
+
+.book-cover-proj img {
+    width: 100%;
+    height: auto;
+}
+
+p.disclosure {
+    margin: 10vh 0;
+    padding-bottom: 10vh;
+    border-bottom: 3px solid white;
+    line-height: 2;
+}
+
+.disclosure span {
+    font-family: var(--heading-font);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+div, aside {
+    justify-content: space-between;
+}
+
+.reading, aside {
+    padding: 1rem;
+}
+
+.between-chap {
+    height: 10vh;
+}
+
+.signoff {
+    text-align: right;
+}
+
+.reading .stanza {
+    text-indent: 0;
+    margin-left: 64px;
+}
+
+#BackToTop {
+    position: fixed;    /* Fixes the position relative to the viewport */
+    bottom: 3vh;        /*Places the button 20px from the bottom of the page */
+    left: 2vw;          /* Places the button 30px from the right of the page */
+    z-index: 99;        /* Ensures it appears above other content */
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#BackToTop:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.farewell {
+    text-align: center;
+    align-content: center;
+    color: var(--white-color);
+    height: 60vh;
+    font-family: "Cormorant Unicase", serif;
+}
+
+.farewell em {
+    color: inherit;
+}
+
+
+
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+}
+
+footer .right, footer .left {
+    padding: 8px;
+}
+
+footer .right {
+    width: 40vw;
+    text-align: right;
+}
+
+footer .left {
+    width: 20vw;
+}
+
+footer .left a:hover {
+    text-decoration: none;
+}
+
+footer h4 {
+    font-size: 16px;
+}
+
+footer p {
+    font-size: 10px;
+}
+
+footer h4, footer p {
+    color: var(--main-color);
+}
+
+footer .right a {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+footer .right a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--white-color);
+}
+
+footer .right .socials {
+    margin-top: 1vh;
+    color: red;
+}
+
+footer .right .socials a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* index */
+/* --------------------------------------------------------------------------------------- */
+
+
+.landing {
+    background-color: var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    cursor: url("/Images/Dracula_Cursor.svg"), crosshair;     /* custom cursor */
+    cursor: url("/Images/Dracula_Cursor.png"), crosshair;     /* custom cursor */
+
+}
+
+.welcome {
+    font-size: 64px;
+    color: var(--white-color);
+}
+
+a.welcome:hover {
+    text-decoration: none;
+    color: var(--main-color);
+    cursor: none;
+}
+
+.fade-in-text {
+  opacity: 0; /* Start completely transparent */
+  animation: fadeIn 5s forwards; /* Apply the fadeIn animation over 5 seconds */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; /* End fully opaque */
+  }
+}
+
+
+
+
+
+
+
+
+/* Synopsis Page */
+/* --------------------------------------------------------------------------------------- */
+
+.author-image {
+    width: 40vh;
+
+}
+
+.author-img {
+    border: inset .5em var(--main-color);
+}
+
+.synopsis {
+    width: 60vw;
+    text-indent: 2rem;
+    line-height: 1.25;
+}
+
+
+
+
+
+
+
+/* Licensure */
+/* --------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* 404 Page */
+/* --------------------------------------------------------------------------------------- */
+
+.page-not-found {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Cormorant Unicase", serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.page-not-found-span {
+    font-size: 18px;
+    font-weight: bold;
+    color:  grey;
+}
+
+.page-not-found p {
+    color: white;
+}
+
+.page-not-found-span a {
+    font-size: inherit;
+    color: red;
+}
+
+.page-not-found-span a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1x;
+    color: white;
+}
